@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Работа с картой</title>
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=key"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<div class="block-left" style="float:left;width:600px;">
+    <div id="map" style="width:100%;height:300px;"></div>
+    
+    <h3>Изменение данных карты</h3>
+    <p><input style="width:100%;" type="button" value="Изменить центр" onclick="setCenter();"></p>
+    <p><input style="width:100%;" type="button" value="Изменить границы" onclick="setBounds();"></p>
+    <p><input style="width:100%;" type="button" value="Изменить тип карты на схему" onclick="setType('map');"></p>
+    <p><input style="width:100%;" type="button" value="Изменить тип карты на спутник" onclick="setType('satellite');"></p>
+    <p><input style="width:100%;" type="button" value="Изменить тип карты на гибрид" onclick="setType('hybrid');"></p>
+    <p><input style="width:100%;" type="button" value="Изменить масштаб на 12" onclick="setZoom(12);"></p>
+    <p><input style="width:100%;" type="button" value="Изменить масштаб на 9" onclick="setZoom(9);"></p>
+    <p><input style="width:100%;" type="button" value="Изменить масштаб на 1" onclick="setZoom(1);"></p>
+
+    <h3>Перемещение</h3>
+    <p><input style="width:100%;" type="button" value="Плавное перемещение" onclick="panTo();"></p>
+    <p><input style="width:100%;" type="button" value="Перемещение по нескольким местам" onclick="panToMany();"></p>
+    <p><input style="width:100%;" type="button" value="Перемещение в случайное место" onclick="panToRandom();"></p>
+
+    <h3>Получение данных</h3>
+    <p><input style="width:100%;" type="button" value="Получаем текущий масштаб" onclick="getZoom();"></p>
+    <p><input style="width:100%;" type="button" value="Получаем текущий центр" onclick="getCenter();"></p>
+    <p><input style="width:100%;" type="button" value="Получаем текущий тип" onclick="getType();"></p>
+    <p><input style="width:100%;" type="button" value="Получаем видимые границы карты" onclick="getBounds();"></p>
+
+    <h3>Удалить карту</h3>
+    <p><input style="width:100%;" type="button" value="Удалить" onclick="destroyMap();"></p>
+</div>
+
+<div class="block-right" style="float:left;width:400px;padding:0 25px;">
+    <h2>Код:</h2>
+    <code>
+        <pre id="info">
+        </pre>
+    </code>
+    <h2>Результат:</h2>
+    <div id="message">
+    </div>
+</div>
+
+</body>
+</html>
