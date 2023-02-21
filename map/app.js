@@ -146,7 +146,7 @@ function startEvents() {
     });
 
     // вывод тела функции в контейнер
-    elInfo.innerHTML = startEvent;
+    elInfo.innerHTML = startEvents;
 }
 
 // уничтожить карту
