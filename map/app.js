@@ -136,6 +136,19 @@ function getBounds() {
     elMsg.innerHTML = result;
 }
 
+// запускаем прослушивание событий
+function startEvents() {
+    elMsg.innerHTML = "";
+
+    myMap.events.add(['click','actionbegin','dblclick','destroy','mouseenter','wheel'], (e) => {
+        console.log(e);
+        elMsg.innerHTML += e.originalEvent.type + "<br>";
+    });
+
+    // вывод тела функции в контейнер
+    elInfo.innerHTML = startEvent;
+}
+
 // уничтожить карту
 function destroyMap() {
     myMap.destroy();
