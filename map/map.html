@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<div class="block-left" style="float:left;width:600px;">
+<div class="block-left" style="float:left;width:50%;box-sizing: border-box;">
     <div id="map" style="width:100%;height:300px;"></div>
     
     <h3>Изменение данных карты</h3>
@@ -30,6 +30,7 @@
     <h3>Получение данных</h3>
     <p><input style="width:100%;" type="button" value="Получаем текущий масштаб" onclick="getZoom();"></p>
     <p><input style="width:100%;" type="button" value="Получаем текущий центр" onclick="getCenter();"></p>
+    <p><input style="width:100%;" type="button" value="Получаем глобальные пиксельные координаты центра" onclick="getGlobalPixelCenter();"></p>
     <p><input style="width:100%;" type="button" value="Получаем текущий тип" onclick="getType();"></p>
     <p><input style="width:100%;" type="button" value="Получаем видимые границы карты" onclick="getBounds();"></p>
 
@@ -40,14 +41,19 @@
     <p><input style="width:100%;" type="button" value="Удалить" onclick="destroyMap();"></p>
 </div>
 
-<div class="block-right" style="float:left;width:400px;padding:0 25px;">
+<div class="block-right" style="float:left;width:50%;box-sizing: border-box;padding:0 25px;">
     <h2>Код:</h2>
     <code>
         <pre id="info">
         </pre>
     </code>
-    <h2>Результат:</h2>
+    <h2>Выводим данные карты:</h2>
     <div id="message">
+        -
+    </div>
+    <h2>События (сперва нужно запустить):</h2>
+    <div id="events">
+        -
     </div>
 </div>
 

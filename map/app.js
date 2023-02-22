@@ -2,6 +2,7 @@ ymaps.ready(init);
 let myMap;
 let elInfo = document.getElementById('info');
 let elMsg = document.getElementById('message');
+let elEvnts = document.getElementById('events');
 
 function init () {
     // Параметры карты можно задать в конструкторе.
@@ -116,6 +117,16 @@ function getCenter() {
     elMsg.innerHTML = result;
 }
 
+// получаем center
+function getGlobalPixelCenter() {
+    let result = myMap.getGlobalPixelCenter();
+
+    // вывод тела функции в контейнер
+    elInfo.innerHTML = getGlobalPixelCenter;
+    // вывод рузультата в контейнер
+    elMsg.innerHTML = result;
+}
+
 // получаем тип
 function getType() {
     let result = myMap.getType();
@@ -138,11 +149,11 @@ function getBounds() {
 
 // запускаем прослушивание событий
 function startEvents() {
-    elMsg.innerHTML = "";
+    elEvnts.innerHTML = "";
 
     myMap.events.add(['click','actionbegin','dblclick','destroy','mouseenter','wheel'], (e) => {
         console.log(e);
-        elMsg.innerHTML += e.originalEvent.type + "<br>";
+        elEvnts.innerHTML += e.originalEvent.type + " ";
     });
 
     // вывод тела функции в контейнер
