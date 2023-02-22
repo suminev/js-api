@@ -71,7 +71,7 @@ function panToMany() {
         // Разрешить/запретить менять масштаб при перемещении
         flying: true,
         // Указание функции влияющей на плавность анимации
-	    timingFunction: 'ease-in-out'
+        timingFunction: 'ease-in-out'
     });
 
     // вывод тела функции в контейнер
